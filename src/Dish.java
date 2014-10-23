@@ -23,34 +23,8 @@ public class Dish {
 	}
 	public Side randSide(int row,int col){
 		Random rand = new Random(); 
-		int tileNum = rand.nextInt(8);
-		Side side = null;
-		switch (tileNum) {
-		case 0:
-			side = new Side(Side.sideTaste.AMARILLOS,row,col, n);
-			break;
-		case 1:
-			side = new Side(Side.sideTaste.BACALAITOS,row,col, n);
-			break;
-		case 2:
-			side = new Side(Side.sideTaste.MOGONGO,row,col, n);
-			break;
-		case 3:
-			side = new Side(Side.sideTaste.PASTELES,row,col, n);
-			break;
-		case 4:
-			side = new Side(Side.sideTaste.TEMBLEQUE,row,col, n);
-			break;
-		case 5:
-			side = new Side(Side.sideTaste.ALCUPURRIA,row,col, n);
-			break;
-		case 6:
-			side = new Side(Side.sideTaste.LECHON,row,col, n);
-			break;
-		case 7:
-			side = new Side(Side.sideTaste.MORCILLA,row,col, n);
-			break;
-		}
+		int tileNum = rand.nextInt(Side.sideTaste.values().length);
+		Side side = new Side(Side.sideTaste.values()[tileNum],row,col, n);
 		return side;
 	}
 
